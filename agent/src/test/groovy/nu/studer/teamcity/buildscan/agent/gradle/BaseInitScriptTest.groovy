@@ -220,6 +220,9 @@ class BaseInitScriptTest extends Specification {
         }
         testKitRunner.withArguments(args)
 
+        // mock scan server require uploadInBackground=true
+        config.additionalJvmArgs += "-Ddevelocity.build-scan.upload-in-background=true"
+
         if (testKitSupportsEnvVars(config)) {
             testKitRunner.withEnvironment(context.buildParameters.environmentVariables)
             testKitRunner.withJvmArguments(config.additionalJvmArgs)
