@@ -263,6 +263,11 @@ class BaseInitScriptTest extends Specification {
         assert 1 == result.output.count(serviceMsg)
     }
 
+    void outputContainsPublishedBuildScanUrl(BuildResult result) {
+        def buildScanUrl = "${mockScansServer.address}s/$PUBLIC_BUILD_SCAN_ID"
+        assert result.output.split("\n").contains(buildScanUrl)
+    }
+
     // for TestKit versions that don't support environment variables, map those vars to system properties
     private static List<String> mapEnvVarsToSystemProps(Map<String, String> envVars) {
         def mapping = [

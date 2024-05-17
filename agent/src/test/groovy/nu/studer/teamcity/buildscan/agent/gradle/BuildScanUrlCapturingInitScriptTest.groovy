@@ -29,6 +29,7 @@ class BuildScanUrlCapturingInitScriptTest extends BaseInitScriptTest {
         then:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER

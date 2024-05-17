@@ -42,6 +42,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -64,6 +65,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -83,6 +85,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_4_AND_HIGHER
@@ -105,6 +108,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_4_AND_HIGHER
@@ -127,6 +131,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_4_AND_HIGHER
@@ -149,6 +154,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -170,6 +176,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -195,6 +202,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -250,6 +258,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_4_AND_HIGHER
@@ -290,6 +299,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         and:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         jdkCompatibleGradleVersion << GRADLE_VERSIONS_3_0_AND_HIGHER
@@ -309,6 +319,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         then:
         outputContainsTeamCityServiceMessageBuildStarted(result)
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         when:
         result = run(config)
@@ -316,6 +327,7 @@ class DevelocityPluginApplicationInitScriptTest extends BaseInitScriptTest {
         then:
         // does not send build started message when build is loaded from configuration cache
         outputContainsTeamCityServiceMessageBuildScanUrl(result)
+        outputContainsPublishedBuildScanUrl(result)
 
         where:
         // scoped to 7.2+ due to https://github.com/gradle/gradle/issues/17340
